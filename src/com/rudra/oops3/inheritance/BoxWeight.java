@@ -11,6 +11,11 @@ BoxWeight (BoxWeight other){
         this.weight = -1;
     }
 
+    BoxWeight(double side,double weight){
+    super(side);
+    this.weight=weight;
+    }
+
     public BoxWeight(double l, double h, double w, double weight) {
         super(l, h, w);//call the parent class constructor
         //used to initialize values present in parent class
@@ -18,4 +23,6 @@ BoxWeight (BoxWeight other){
 //        System.out.println(super.weight);
         this.weight = weight;
     }
+
+
 }

@@ -34,6 +34,7 @@ public class Main {
 
 //        BoxWeight box7=new Box(2,3,4);
 
+        BoxPrice box8=new BoxPrice(5,8,200);
 
 
     }
