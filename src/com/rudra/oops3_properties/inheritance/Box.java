@@ -1,4 +1,4 @@
-package com.rudra.oops3.inheritance;
+package com.rudra.oops3_properties.inheritance;
 
 public class Box {
     double l;

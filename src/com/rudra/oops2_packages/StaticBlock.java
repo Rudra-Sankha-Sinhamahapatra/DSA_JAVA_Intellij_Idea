@@ -1,4 +1,4 @@
-package com.rudra.oops2;
+package com.rudra.oops2_packages;
 
 //this is a demo to show initialisation of static variables
 public class StaticBlock {

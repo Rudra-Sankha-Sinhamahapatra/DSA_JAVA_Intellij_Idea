@@ -1,4 +1,4 @@
-package com.rudra.oops2;
+package com.rudra.oops2_packages;
 
 public class Main {
     public static void main(String[] args) {

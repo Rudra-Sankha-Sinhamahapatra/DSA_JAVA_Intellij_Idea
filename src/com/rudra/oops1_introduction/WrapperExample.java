@@ -1,4 +1,4 @@
-package com.rudra.oops1;
+package com.rudra.oops1_introduction;
 
 public class WrapperExample {
     public static void main(String[] args) {

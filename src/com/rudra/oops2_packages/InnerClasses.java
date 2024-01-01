@@ -1,4 +1,4 @@
-package com.rudra.oops2;
+package com.rudra.oops2_packages;
 
 //outside classes cannot be static,only inner classes can be static
 //class Test{

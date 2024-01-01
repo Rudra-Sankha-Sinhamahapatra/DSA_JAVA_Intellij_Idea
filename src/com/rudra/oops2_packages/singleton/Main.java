@@ -1,4 +1,4 @@
-package com.rudra.oops2.singleton;
+package com.rudra.oops2_packages.singleton;
 
 public class Main {
     public static void main(String[] args) {
