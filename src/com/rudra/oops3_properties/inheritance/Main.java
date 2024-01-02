@@ -35,8 +35,13 @@ public class Main {
 //        BoxWeight box7=new Box(2,3,4);
 
         BoxPrice box8=new BoxPrice(5,8,200);
+//        box1.greeting();
+//        Box.greeting();
+        Box box9=new BoxWeight();
+        box9.greeting();
 
-
+        BoxWeight box10=new BoxWeight();
+        BoxWeight.greeting(); //you can inherit static methods but you can't override
     }
 
 

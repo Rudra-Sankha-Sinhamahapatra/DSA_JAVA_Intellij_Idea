@@ -7,10 +7,16 @@ BoxWeight (BoxWeight other){
     super(other);
     weight=other.weight;
 }
+
+
     public BoxWeight() {
         this.weight = -1;
     }
 
+    //@Override  it's not overriding it because you cant override static method
+    static void greeting(){
+        System.out.println("Hey,I am in box class,Greetings");
+    }
     BoxWeight(double side,double weight){
     super(side);
     this.weight=weight;
