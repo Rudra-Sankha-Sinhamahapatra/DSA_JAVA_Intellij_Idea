@@ -1,5 +1,7 @@
 package com.rudra.oops3_properties.inheritance;
 
+import java.util.ArrayList;
+
 public class BoxWeight extends Box{
 double weight;
 
@@ -16,6 +18,8 @@ BoxWeight (BoxWeight other){
     //@Override  it's not overriding it because you cant override static method
     static void greeting(){
         System.out.println("Hey,I am in box class,Greetings");
+        ArrayList list=new ArrayList(); //abstract data types
+        list.add(4);
     }
     BoxWeight(double side,double weight){
     super(side);

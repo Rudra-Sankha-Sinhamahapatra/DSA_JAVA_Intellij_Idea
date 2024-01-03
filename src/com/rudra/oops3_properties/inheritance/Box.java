@@ -1,10 +1,15 @@
 package com.rudra.oops3_properties.inheritance;
 
 public class Box {
-    double l;
+    private double l;
     double h;
     double w;
 
+
+    //data hiding
+    public double GetL(){
+        return l;
+    }
     static void greeting(){
         System.out.println("Hey,I am in box class");
     }
