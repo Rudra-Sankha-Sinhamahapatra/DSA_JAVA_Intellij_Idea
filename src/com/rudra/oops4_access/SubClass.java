@@ -6,13 +6,14 @@ public class SubClass extends A{
     }
 
     public static void main(String[] args) {
-//        SubClass obj=new SubClass(32,"Hello");
-        A obj=new A(32,"Hello");
+        SubClass obj=new SubClass(32,"Hello");
+//       A obj=new A(32,"Hello");
         //will work because base class can use the protected member  when it is
         // in the same package
 
         int n= obj.num;
         System.out.println(n);
+        System.out.println(obj instanceof SubClass);
     }
 }
 
