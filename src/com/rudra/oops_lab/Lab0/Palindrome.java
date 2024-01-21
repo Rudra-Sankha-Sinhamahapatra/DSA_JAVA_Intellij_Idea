@@ -1,4 +1,4 @@
-package com.rudra.oops_lab.Lab1;
+package com.rudra.oops_lab.Lab0;
 
 import java.util.Scanner;
 

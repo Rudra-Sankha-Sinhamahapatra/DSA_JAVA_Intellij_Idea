@@ -1,4 +1,4 @@
-package com.rudra.oops_lab.Lab1;
+package com.rudra.oops_lab.Lab0;
 
 public class pattern1_whiletrue {
     public static void main(String[] args) {
