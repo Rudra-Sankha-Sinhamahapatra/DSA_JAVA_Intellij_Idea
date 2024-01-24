@@ -20,7 +20,12 @@ public class Homework {
                 System.out.println("Result: "+(a*b));
                 break;
             case '/':
-                System.out.println("Result: "+(a/b));
+                if(b!=0) {
+                    System.out.println("Result: " + (a / b));
+                }
+                else {
+                System.out.println("Undefined");
+                }
                 break;
             default:
                 System.out.println("Invalid Operator");
