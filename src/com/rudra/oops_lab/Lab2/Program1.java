@@ -13,15 +13,21 @@ Aim of the program :
         Output:
         Display the Largest Number
 */
-import java.util.Scanner;
+//import java.util.Scanner;
 
 public class Program1 {
     public static void main(String[] args) {
-        Scanner scanner=new Scanner(System.in);
+//        Scanner scanner=new Scanner(System.in);
         System.out.println("enter three numbers");
-        int a=scanner.nextInt();
-        int b= scanner.nextInt();
-        int c=scanner.nextInt();
+//        int a=scanner.nextInt();
+//        int b= scanner.nextInt();
+//        int c=scanner.nextInt();
+        int a,b,c;
+        a=Integer.parseInt(args[0]);
+        b=Integer.parseInt(args[1]);
+        c=Integer.parseInt(args[2]);
+
+
         int largest;
         if(a>b && a<c){
             largest=a;
