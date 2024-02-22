@@ -9,7 +9,6 @@ public abstract class Parent {
         value=24;
     }
 
-
     static void hello(){
         System.out.println("hey");
     }
