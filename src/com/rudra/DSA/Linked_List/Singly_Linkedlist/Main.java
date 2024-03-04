@@ -1,4 +1,4 @@
-package com.rudra.DSA.Linked_List;
+package com.rudra.DSA.Linked_List.Singly_Linkedlist;
 
 import java.util.LinkedList;
 

@@ -1,4 +1,6 @@
-package com.rudra.DSA.Linked_List;
+package com.rudra.DSA.Linked_List.Singly_Linkedlist;
+
+import com.rudra.DSA.Linked_List.Singly_Linkedlist.LL;
 
 public class LL_Main{
     public static void main(String[] args) {
@@ -10,6 +12,10 @@ public class LL_Main{
         list.insertLast(99);
         list.insert(100,3);
         list.deleteFirst();
+        list.display();
+        System.out.println(list.deleteLast());
+        list.display();
+        System.out.println(list.delete(2));
         list.display();
     }
 }
