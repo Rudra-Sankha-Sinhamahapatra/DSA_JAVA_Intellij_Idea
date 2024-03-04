@@ -13,7 +13,7 @@ public class Main {
 //        daughter.career();
 //        Parent.hello();
 //        son.normal();
-        Parent mom=new Parent(45) {
+        Parent dad  = new Parent(32) {
             @Override
             void career() {
 
@@ -23,6 +23,7 @@ public class Main {
             void partner() {
 
             }
+
         };
     }
 }

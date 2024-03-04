@@ -14,12 +14,15 @@ public class WrapperExample {
         System.out.println(a+ " " + b);
         final A Rudra=new A("rudra");
         Rudra.name="other name";
+        Rudra.name="Rudra Sankha Sinhamahapatra";
+
+        System.out.println(Rudra.name);
 
         //when a non primitive is final you cant reassign it
         //Rudra=new A("new object");
 
         A obj=new A("absdkfjelf");
-        System.out.println(obj);
+        System.out.println(obj.name);
         //doesnt have much load on memory
 //        for(int i=0;i<10000;i++){
 //            obj=new A("random name");

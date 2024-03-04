@@ -4,15 +4,21 @@ public class Main {
     public static void main(String[] args) {
         Human rudra=new Human(20,"Rudra",10000,false);
         Human rahul=new Human(34,"Rahul",45000,true);
+        Human varun=new Human(34,"Rahul",45000,true);
 
         System.out.println(rudra.name);
         System.out.println(rahul.salary);
         System.out.println(Human.population);
         System.out.println(Human.population);
+        System.out.println(Human.population);
+//        Human.message();
+//        rudra.message();
 
         Main fun=new Main();
         fun.fun2();
-//        greeting();
+        fun.fun7();
+        Human.message();
+//      greeting();
     }
 
     static  void fun(){
@@ -23,8 +29,12 @@ public class Main {
         //context,hence i am referencing it
         Main obj=new Main();
         obj.greeting();
+
     }
 
+    static void fun7(){
+        System.out.println("Good job");
+    }
     void fun2(){
         greeting();
     }
