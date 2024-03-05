@@ -40,9 +40,11 @@ class box extends plate {
 }
 
 class woodbox extends box {
+    double thick;
 
-    public woodbox(double length, double width, double height) {
+    public woodbox(double length, double width, double height,double thick) {
         super(length, width, height);
+        this.thick=thick;
     }
 }
 
@@ -66,12 +68,15 @@ public class Program2 {
             if (c == 'y') {
                 System.out.println("Enter Height:");
                 double height = scanner.nextDouble();
-                box boxx = new woodbox(length, width, height);
+                System.out.println("Enter the Thickness:");
+                double thick=scanner.nextDouble();
+                woodbox boxx = new woodbox(length, width, height,thick);
 
                 System.out.println("Dimensions of woodbox: ");
                 System.out.println("Length: " + boxx.length);
                 System.out.println("Width: " + boxx.width);
                 System.out.println("Height: " + boxx.height);
+                System.out.println("Thickness: "+ boxx.thick);
             } else if (c == 'n') {
               plate platee=new plate(length,width);
                 System.out.println("Dimensions of plate: ");
