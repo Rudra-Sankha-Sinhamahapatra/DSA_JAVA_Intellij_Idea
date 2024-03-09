@@ -11,7 +11,7 @@ class.
 
 
 interface Motor {
-    int capacity = 0;
+    int capacity = 1;
 
     void run();
 
