@@ -20,7 +20,7 @@ public class Program2 {
             int a=10,b=0;
             int c=a/b;
         }
-        catch(Exception e){
+        catch(ArithmeticException e){
             System.out.println(e.getMessage());
         }
         finally{
