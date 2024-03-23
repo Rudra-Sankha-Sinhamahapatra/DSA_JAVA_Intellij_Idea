@@ -20,11 +20,9 @@ public class Program1 {
         Scanner scanner=new Scanner(System.in);
         try{
             System.out.println("Enter Array elements");
-            arr[0]=scanner.nextInt();
-            arr[1]=scanner.nextInt();
-            arr[2]=scanner.nextInt();
-            arr[3]=scanner.nextInt();
-            arr[4]=scanner.nextInt();
+            for (int i = 0; i < 5; i++) {
+                arr[i]=scanner.nextInt();
+            }
         }
         catch(Exception e){
             System.out.println("ArrayIndexOutofBoundsException");
