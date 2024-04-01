@@ -1,4 +1,4 @@
-package com.rudra.GUI_Swing.Calculator;
+package com.rudra.GUI_Swing.Questions;
 
 import javax.swing.*;
 import java.awt.*;
