@@ -12,56 +12,43 @@ Counter
 - 10           11      12      13      14      15
 
  */
+import java.lang.*;
 import java.util.Scanner;
 
-class CounterThread extends Thread {
-    private int lowerRange;
-    private int upperRange;
+class MyThread extends Thread {
+    int low;
+    int high;
 
-    public CounterThread(String name, int lowerRange, int upperRange) {
+    public MyThread(String name, int lowerRange, int upperRange) {
         super(name);
-        this.lowerRange = lowerRange;
-        this.upperRange = upperRange;
+        low = lowerRange;
+        high = upperRange;
     }
 
-    @Override
     public void run() {
-        System.out.println("Thread - " + getName());
-        long startTime = System.currentTimeMillis();
-        long sleepTime = 5;
-
-        for (int i = lowerRange; i <= upperRange; i++) {
+        for (int i = low; i <= high; i++) {
+            System.out.println("Thread - " + getName());
             System.out.println("Counter - " + i);
             try {
-                long elapsedTime = System.currentTimeMillis() - startTime;
-                long remainingTime = sleepTime - elapsedTime;
-                if (remainingTime > 0) {
-                    Thread.sleep(remainingTime);
-                }
-                startTime = System.currentTimeMillis();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+                Thread.sleep(5);
+            }
+            catch (InterruptedException e) {
+                // pass
             }
         }
     }
 }
 
-public class Program1 {
+class LAB8_1{
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Enter the name of the thread: ");
-        String threadName = scanner.nextLine();
-
-        System.out.print("Enter the lower range of the counter: ");
-        int lowerRange = scanner.nextInt();
-
-        System.out.print("Enter the upper range of the counter: ");
-        int upperRange = scanner.nextInt();
-
-        scanner.close();
-
-        CounterThread counterThread = new CounterThread(threadName, lowerRange, upperRange);
-        counterThread.start();
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter thread name: ");
+        String tname = scan.nextLine();
+        System.out.println("Enter lower range: ");
+        int low = scan.nextInt();
+        System.out.println("Enter upper range: ");
+        int high = scan.nextInt();
+        MyThread t = new MyThread(tname, low, high);
+        t.start();
     }
 }
