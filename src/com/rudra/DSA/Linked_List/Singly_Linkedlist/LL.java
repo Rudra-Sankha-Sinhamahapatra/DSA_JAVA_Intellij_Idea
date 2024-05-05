@@ -78,6 +78,21 @@ public int deleteLast(){
         return  val;
 }
 
+//insert using recursion
+    public void insertRec(int val,int index){
+ head=insertRec(val,index,head);
+    }
+
+    private  Node insertRec(int val,int index,Node node){
+        if(index==0 || node==null){
+            Node temp=new Node(val,node);
+               size++;
+               return temp;
+        }
+       node.next= insertRec(val,--index,node.next);
+        return node;
+    }
+
 public int delete(int index){
         if(index==0){
             return deleteFirst();
@@ -142,5 +157,32 @@ public Node get(int index){
         this.next=next;
     }
    }
+
+   //questions
+    public void duplicates(){
+        Node node=head;
+        while(node.next!=null){
+            if(node.next!=null && node.value==node.next.value){
+             node.next=node.next.next;
+             size--;
+            } else{
+                node=node.next;
+            }
+        }
+        tail=node;
+        tail.next=null;
+    }
+
+    public static void main(String[]args){
+        LL list=new LL();
+        list.insertFirst(1);
+        list.insertLast(1);
+        list.insertLast(2);
+
+
+        list.display();
+        list.duplicates();
+        list.display();
+    }
     
 }

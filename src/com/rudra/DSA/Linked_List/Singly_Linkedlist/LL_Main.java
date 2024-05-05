@@ -17,5 +17,7 @@ public class LL_Main{
         list.display();
         System.out.println(list.delete(2));
         list.display();
+        list.insertRec(88,2);
+        list.display();
     }
 }

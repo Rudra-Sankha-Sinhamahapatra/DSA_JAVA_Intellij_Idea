@@ -24,7 +24,7 @@ public class Program1 {
                 arr[i]=scanner.nextInt();
             }
         }
-        catch(Exception e){
+        catch(ArrayIndexOutOfBoundsException e){
             System.out.println("ArrayIndexOutofBoundsException");
             System.out.println(e.getMessage());        }
     }
