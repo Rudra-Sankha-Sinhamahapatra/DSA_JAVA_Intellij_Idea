@@ -158,7 +158,7 @@ public Node get(int index){
     }
    }
 
-   //questions
+   //questions:Remove duplicate from sorted linked list
     public void duplicates(){
         Node node=head;
         while(node.next!=null){
