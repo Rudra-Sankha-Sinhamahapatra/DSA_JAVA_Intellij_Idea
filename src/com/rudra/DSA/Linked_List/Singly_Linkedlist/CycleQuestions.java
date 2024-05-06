@@ -45,7 +45,6 @@ public class CycleQuestions {
     public ListNode detectCycle(ListNode head) {
         ListNode fast = head;
         ListNode slow = head;
-        boolean cycle = false;
         do {
             if (fast == null || fast.next == null) {
                 return null;
