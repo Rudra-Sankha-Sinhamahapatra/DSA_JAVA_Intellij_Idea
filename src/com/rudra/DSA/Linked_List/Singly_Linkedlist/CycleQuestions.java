@@ -38,6 +38,29 @@ public class CycleQuestions {
         }
         }
 
+        //Starting Node of linked list cycle
+       //https://leetcode.com/problems/linked-list-cycle-ii/
+
+ class StartingNode {
+    public ListNode detectCycle(ListNode head) {
+        ListNode fast = head;
+        ListNode slow = head;
+        boolean cycle = false;
+        do {
+            if (fast == null || fast.next == null) {
+                return null;
+            }
+            fast = fast.next.next;
+            slow = slow.next;
+        } while (fast != slow);
+        slow = head;
+        while (slow != fast) {
+            slow = slow.next;
+            fast = fast.next;
+        }
+        return slow;
+    }
+}
 
 class ListNode {
     int val;
