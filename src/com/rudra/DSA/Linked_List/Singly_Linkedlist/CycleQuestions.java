@@ -59,6 +59,40 @@ public class CycleQuestions {
         }
         return slow;
     }
+
+//https://leetcode.com/problems/happy-number/
+     public boolean isHappy(int n) {
+     int slow=n;
+     int fast=n;
+     do{
+         slow=findSquare(slow);
+         fast=findSquare(findSquare(fast));
+         if(slow==1){
+             return true;
+         }
+     }while(slow!=fast);
+     return false;
+     }
+     private int findSquare(int number){
+        int ans=0;
+        while(number>0){
+            int rem=number%10;
+           ans+=(rem*rem);
+           number=number/10;
+        }
+        return ans;
+     }
+
+     //https://leetcode.com/problems/middle-of-the-linked-list/
+     public ListNode middleNode(ListNode head) {
+         ListNode slow=head;
+         ListNode fast=head;
+         while (fast!=null && fast.next!=null){
+             fast=fast.next.next;
+             slow=slow.next;
+         }
+         return slow;
+     }
 }
 
 class ListNode {
