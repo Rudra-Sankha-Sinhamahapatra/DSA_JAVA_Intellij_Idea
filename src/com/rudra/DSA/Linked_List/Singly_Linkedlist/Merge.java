@@ -1,5 +1,5 @@
 package com.rudra.DSA.Linked_List.Singly_Linkedlist;
-
+import com.rudra.DSA.Linked_List.Singly_Linkedlist.ListNode;
 public class Merge {
 
     //https://leetcode.com/problems/merge-two-sorted-lists/
@@ -22,13 +22,6 @@ public class Merge {
         s.next=(list1!=null)?list1:list2;
         return f.next;
     }
-
-    class ListNode {
-        int val;
-        ListNode next;
-
-        public ListNode(int val) {
-            this.val = val;
-            this.next = null;
-        }
 }
+
+
