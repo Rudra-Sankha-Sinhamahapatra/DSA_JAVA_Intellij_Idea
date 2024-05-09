@@ -326,6 +326,34 @@ public Node get(int index){
         return head;
     }
 
+    //better solution for palindrome
+    //https://leetcode.com/problems/palindrome-linked-list/
+    static final int[] _arr = new int[100001];
+
+    public boolean isPalindrome(ListNode head) {
+        if (head == null) {
+            return false;
+        }
+        int[] arr = _arr;
+
+        ListNode n = head;
+        int index = 0;
+        while (n != null) {
+            arr[index++] = n.val;
+            n = n.next;
+        }
+
+        int i = 0;
+        int j = index-1;
+        while (i < j) {
+            if (arr[i++] != arr[j--]) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
         public static void main(String[]args){
         LL first=new LL();
        LL second=new LL();

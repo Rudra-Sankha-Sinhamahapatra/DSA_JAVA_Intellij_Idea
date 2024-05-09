@@ -94,6 +94,28 @@ public class CycleQuestions {
          return slow;
      }
 
+
+     // https://leetcode.com/problems/reverse-linked-list/submissions/
+     // google, apple, amazon, microsoft
+     public ListNode reverseList(ListNode head) {
+         if (head == null) {
+             return head;
+         }
+         ListNode prev = null;
+         ListNode present = head;
+         ListNode next = present.next;
+
+         while (present != null) {
+             present.next = prev;
+             prev = present;
+             present = next;
+             if (next != null) {
+                 next = next.next;
+             }
+         }
+         return prev;
+     }
+
      //https://leetcode.com/problems/sort-list/
      private ListNode findMid(ListNode head) {
          if (head == null || head.next == null)
@@ -133,6 +155,25 @@ public class CycleQuestions {
          ListNode leftHalf = sortList(head);
          ListNode rightHalf = sortList(newHead);
          return merge(leftHalf, rightHalf);
+     }
+
+     //https://leetcode.com/problems/palindrome-linked-list/
+     public boolean isPalindrome(ListNode head) {
+         ListNode mid=middleNode(head);
+         ListNode headSecond=reverseList(mid);
+         ListNode reverseHead=headSecond;
+
+         //compare both the halves
+         while(head!=null && headSecond!=null){
+             if(head.val!=headSecond.val){
+                 break;
+             }
+             head=head.next;
+             headSecond=headSecond.next;
+         }
+         reverseList(reverseHead);
+
+         return head==null||headSecond==null;
      }
 }
 
