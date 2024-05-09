@@ -1,11 +1,9 @@
 package com.rudra.DSA.Linked_List.Singly_Linkedlist;
 
-import java.util.LinkedList;
-
 //Amazon and microsoft
 //https://leetcode.com/problems/linked-list-cycle/
 //
-public class CycleQuestions {
+public class InterviewQuestions {
     public boolean hasCycle(ListNode head) {
             ListNode fast=head;
             ListNode slow=head;
