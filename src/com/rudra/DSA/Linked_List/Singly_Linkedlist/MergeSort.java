@@ -24,7 +24,7 @@ public class MergeSort {
     }
 
     //https://leetcode.com/problems/sort-list/description/
-    public ListNode sortList(ListNode head){
+    private ListNode sortList(ListNode head){
         if(head==null ||head.next==null){
             return head;
         }
