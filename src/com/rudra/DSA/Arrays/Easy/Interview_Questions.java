@@ -1,5 +1,6 @@
 package com.rudra.DSA.Arrays.Easy;
 import java.util.ArrayList;
+import java.util.Collections;
 public class Interview_Questions {
     //https://www.geeksforgeeks.org/problems/largest-element-in-array4009/0
     public int largest(int arr[], int n)
@@ -112,4 +113,26 @@ public int removeDuplicates(int[] nums) {
     }
 
 
+    //alternatively
+    public static ArrayList<Integer> rotateArray1(ArrayList<Integer> arr, int k) {
+        int n = arr.size();
+        k = k % n;  // To handle if k is greater than n
+
+        // Reverse the first k elements
+        reverse(arr, 0, k - 1);
+        // Reverse the remaining n - k elements
+        reverse(arr, k, n - 1);
+        // Reverse the entire list
+        reverse(arr, 0, n - 1);
+
+        return arr;
+    }
+
+    private static void reverse(ArrayList<Integer> arr, int start, int end) {
+        while (start < end) {
+            Collections.swap(arr, start, end);
+            start++;
+            end--;
+        }
+    }
 }
