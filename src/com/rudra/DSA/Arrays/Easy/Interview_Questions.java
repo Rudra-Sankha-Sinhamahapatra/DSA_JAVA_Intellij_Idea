@@ -1,5 +1,5 @@
 package com.rudra.DSA.Arrays.Easy;
-
+import java.util.ArrayList;
 public class Interview_Questions {
     //https://www.geeksforgeeks.org/problems/largest-element-in-array4009/0
     public int largest(int arr[], int n)
@@ -78,5 +78,38 @@ public int removeDuplicates(int[] nums) {
     return i+1;
 
 }
+
+  //https://www.naukri.com/code360/problems/left-rotate-an-array-by-one_5026278?interviewProblemRedirection=true&search=left%20rotate&leftPanelTabValue=SUBMISSION
+  static int[] rotateArray(int[] arr, int n)
+  {
+      int temp=arr[0];
+      // Write your code here.
+      for(int i=1;i<n;i++){
+          arr[i-1]=arr[i];
+      }
+      arr[n-1]=temp;
+      return arr;
+  }
+
+  //https://www.naukri.com/code360/problems/rotate-array_1230543?interviewProblemRedirection=true&search=Rotate%20array&leftPanelTabValue=SUBMISSION
+    public static ArrayList<Integer> rotateArray(ArrayList<Integer> arr, int k) {
+        int n = arr.size();
+        k = k % n;
+        ArrayList<Integer> temp = new ArrayList<>(k);
+        for (int i = 0; i < k; i++) {
+            temp.add(arr.get(i));
+        }
+
+        for (int i = k; i < n; i++) {
+            arr.set(i - k, arr.get(i));
+        }
+
+        for (int i = n-k; i < n; i++) {
+            arr.set(i, temp.get(i-(n-k)));
+        }
+
+        return arr;
+    }
+
 
 }
