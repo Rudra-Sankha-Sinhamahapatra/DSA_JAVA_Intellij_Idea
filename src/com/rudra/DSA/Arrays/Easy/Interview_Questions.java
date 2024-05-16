@@ -1,6 +1,7 @@
 package com.rudra.DSA.Arrays.Easy;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.TreeSet;
 public class Interview_Questions {
     //https://www.geeksforgeeks.org/problems/largest-element-in-array4009/0
     public int largest(int arr[], int n)
@@ -158,6 +159,21 @@ public int removeDuplicates(int[] nums) {
             }
             return -1;
         }
+        //https://www.geeksforgeeks.org/problems/union-of-two-sorted-arrays-1587115621/1?utm_source=youtube&utm_medium=collab_striver_ytdescription&utm_campaign=union-of-two-sorted-arrays
+        public static ArrayList<Integer> findUnion(int arr1[], int arr2[], int n, int m)
+        {
+            TreeSet<Integer>unionset=new TreeSet<>();
+
+            for(int i=0;i<n;i++){
+                unionset.add(arr1[i]);
+            }
+            for(int i=0;i<m;i++){
+                unionset.add(arr2[i]);
+            }
+            return new ArrayList<>(unionset);
+        }
+
+
 
     }
 
