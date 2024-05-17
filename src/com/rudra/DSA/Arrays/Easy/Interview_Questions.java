@@ -173,6 +173,27 @@ public int removeDuplicates(int[] nums) {
             return new ArrayList<>(unionset);
         }
 
+        //https://www.geeksforgeeks.org/problems/intersection-of-two-sorted-array-1587115620/1
+        static ArrayList<Integer> printIntersection(int arr1[], int arr2[], int n, int m) {
+            int i = 0;
+            int j = 0;
+            ArrayList<Integer> list = new ArrayList<>();
+            while (i < n && j < m) {
+                if (arr1[i] < arr2[j]) {
+                    i++;
+                } else if (arr1[i] > arr2[j]) {
+                    j++;
+                } else {
+                    if (!list.contains(arr1[i])) {  // Check for duplicates before adding
+                        list.add(arr1[i]);
+                    }
+                    i++;
+                    j++;
+                }
+            }
+            return list;
+        }
+
 
 
     }
