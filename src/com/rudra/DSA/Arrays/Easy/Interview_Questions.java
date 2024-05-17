@@ -242,5 +242,14 @@ public int findMaxConsecutiveOnes(int[] arr)
     return max>count? max:count;
 }
 
+//https://leetcode.com/problems/single-number/description/
+public int singleNumber(int[] arr) {
+    int xor=0;
+    for(int i=0;i<arr.length;i++){
+        xor^=arr[i];
+    }
+    return xor;
+}
+
     }
 
