@@ -212,7 +212,35 @@ public int removeDuplicates(int[] nums) {
             return list;
         }
 
+//https://leetcode.com/problems/missing-number/description/
+    public int missingNumber(int[] arr) {
+        int xor1=0;
+        int xor2=0;
+        for(int i=0;i<arr.length;i++){
+            xor2^=arr[i];
+            xor1^=(i+1);
+        }
+        return xor1^xor2 ;
+}
 
+//https://leetcode.com/problems/max-consecutive-ones/description/
+public int findMaxConsecutiveOnes(int[] arr)
+{
+    int max=0;
+    int count=0;
+    for(int i=0;i<arr.length;i++){
+        if(arr[i]==0){
+            if(max<count){
+                max=count;
+            }
+            count=0;
+        }
+        else{
+            count++;
+        }
+    }
+    return max>count? max:count;
+}
 
     }
 
