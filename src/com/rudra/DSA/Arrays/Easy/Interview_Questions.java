@@ -129,12 +129,30 @@ public int removeDuplicates(int[] nums) {
         return arr;
     }
 
+//https://leetcode.com/problems/rotate-array/description/
+    private static void reverse(int [] arr,int start,int end){
+        while(start<end){
+            int temp=arr[start];
+            arr[start]=arr[end];
+            arr[end]=temp;
+            start++;
+            end--;
+        }
+    }
     private static void reverse(ArrayList<Integer> arr, int start, int end) {
         while (start < end) {
             Collections.swap(arr, start, end);
             start++;
             end--;
         }
+    }
+
+    public void rotate(int[] arr, int k) {
+        int n=arr.length;
+        k=k%n;
+        reverse(arr,n-k,n-1);
+        reverse(arr,0,n-k-1);
+        reverse(arr,0,n-1);
     }
 
         //https://leetcode.com/problems/move-zeroes/description/
