@@ -1,5 +1,6 @@
 package com.rudra.DSA.Arrays.Medium;
 import  java.util.Arrays;
+import java.util.HashMap;
 public class InterviewQuestions {
 
     //https://leetcode.com/problems/two-sum/description/
@@ -31,6 +32,29 @@ public class InterviewQuestions {
         }
         return null;
     }
+
+    //Alternatively
+
+        public int[] twoSum1(int[] arr, int target) {
+            HashMap<Integer, Integer> map = new HashMap<>();
+            int[] result = new int[2];
+
+            for (int i = 0; i < arr.length; i++) {
+                int current = arr[i];
+                int complement = target - current;
+
+                if (map.containsKey(complement)) {
+                    result[0] = map.get(complement);
+                    result[1] = i;
+                    return result;
+                }
+
+                map.put(current, i);
+            }
+
+            return null; // Return null if no solution is found
+        }
+
 
     //https://www.naukri.com/code360/problems/reading_6845742?leftPanelTabValue=PROBLEM
     public static String read(int n, int []arr, int target){
