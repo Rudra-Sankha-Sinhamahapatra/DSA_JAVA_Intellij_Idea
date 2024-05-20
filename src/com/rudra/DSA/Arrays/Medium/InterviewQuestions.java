@@ -1,6 +1,6 @@
 package com.rudra.DSA.Arrays.Medium;
-import  java.util.Arrays;
-import java.util.HashMap;
+import  java.util.*;
+
 public class InterviewQuestions {
 
     //https://leetcode.com/problems/two-sum/description/
@@ -77,4 +77,44 @@ public class InterviewQuestions {
     }
 
 
+//    https://leetcode.com/problems/sort-colors/description/
+    //Brute
+
+    public void sortColors(int[] arr) {
+        int count0 = 0, count1 = 0, count2 = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == 0) count0++;
+            else if (arr[i] == 1) count1++;
+            else if (arr[i] == 2) count2++;
+        }
+        for (int i = 0; i < count0; i++) arr[i] = 0;
+        for (int i = count0; i < count0 + count1; i++) arr[i] = 1;
+        for (int i = count0 + count1; i < count0 + count1 + count2; i++) arr[i] = 2;
+       }
+
+//https://www.naukri.com/code360/problems/sort-an-array-of-0s-1s-and-2s_892977?leftPanelTabValue=PROBLEM
+public static void sortArray(ArrayList<Integer> arr, int n) {
+    // Write your code here.
+    int low=0,mid=0,high=n-1;
+    while(mid<=high){
+        if(arr.get(mid)==0){
+            Collections.swap(arr,low,mid);
+            low++;
+            mid++;
+        }
+        else if(arr.get(mid)==1){
+            mid++;
+        }
+        else{
+            Collections.swap(arr,mid,high);
+            high--;
+        }
+    }
 }
+
+
+}
+
+
+
+
