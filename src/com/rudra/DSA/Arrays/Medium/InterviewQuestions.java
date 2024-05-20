@@ -112,6 +112,92 @@ public static void sortArray(ArrayList<Integer> arr, int n) {
     }
 }
 
+//https://leetcode.com/problems/majority-element/
+    //Brute
+public int majorityElement(int[] arr) {
+    int n=arr.length;
+    for(int i=0;i<n;i++){
+        int count=0;
+        for(int j=0;j<n;j++){
+            if(arr[j]==arr[i]) count++;
+        }
+        if(count>n/2) return arr[i];
+    }
+    return -1;
+}
+
+//Better
+
+    public int majorityElement1(int[] arr) {
+        int n=arr.length;
+        HashMap<Integer,Integer>map=new HashMap<>();
+        for(int i=0;i<n;i++){
+            int value=map.getOrDefault(arr[i],0);
+            map.put(arr[i],value+1);
+        }
+
+        for(Map.Entry<Integer,Integer>it:map.entrySet()){
+            if(it.getValue()>(n/2)){
+                return it.getKey();
+            }
+        }
+        return -1;
+    }
+
+
+    //Optimal
+    public int majorityElement2(int[] nums) {
+        int count = 0;
+        int candidate = 0;
+
+        for (int num : nums) {
+            if (count == 0) {
+                candidate = num;
+            }
+
+            if (num == candidate) {
+                count++;
+            } else {
+                count--;
+            }
+        }
+
+        return candidate;
+    }
+
+    //or
+    public int majorityElement3(int[] nums) {
+        Arrays.sort(nums);
+        int n = nums.length;
+        return nums[n/2];
+    }
+
+    //https://www.naukri.com/code360/problems/majority-element_842495?leftPanelTabValue=PROBLEM
+
+    public static int findMajority(int[] nums, int n) {
+        int count = 0;
+        int candidate = 0;//majority
+
+        for (int num : nums) {
+            if (count == 0) {
+                candidate = num;
+            }
+
+            if (num == candidate) {
+                count++;
+            } else {
+                count--;
+            }
+        }
+        int count1=0;
+        for(int num:nums){
+            if(num==candidate){
+                count1++;
+            }
+        }
+        if(count1>n/2) return candidate;
+        return -1;
+    }
 
 }
 
