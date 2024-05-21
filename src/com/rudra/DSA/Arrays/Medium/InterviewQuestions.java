@@ -199,6 +199,18 @@ public int majorityElement(int[] arr) {
         return -1;
     }
 
+    //https://leetcode.com/problems/maximum-subarray/
+    public int maxSubArray(int[] arr) {
+        int sum = 0;
+        int maxi = Integer.MIN_VALUE;
+        for (int i = 0; i < arr.length; i++) {
+            sum += arr[i];
+            maxi = Math.max(sum, maxi);
+            if (sum < 0) sum = 0;
+        }
+        return maxi;
+    }
+
 }
 
 
