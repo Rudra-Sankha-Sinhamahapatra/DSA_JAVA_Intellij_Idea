@@ -211,6 +211,37 @@ public int majorityElement(int[] arr) {
         return maxi;
     }
 
+
+    //https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/
+        public int maxProfit(int[] arr) {
+            int maxPro = 0;
+            int minPrice=Integer.MAX_VALUE;
+            for(int i=0;i<arr.length;i++){
+                minPrice=Math.min(minPrice,arr[i]);
+                maxPro=Math.max(maxPro,arr[i]-minPrice);
+            }
+            return maxPro;
+        }
+
+        //https://leetcode.com/problems/rearrange-array-elements-by-sign/
+    //Brute
+        public int[] rearrangeArray(int[] nums) {
+            ArrayList<Integer>pos=new ArrayList<>();
+            ArrayList<Integer>neg=new ArrayList<>();
+
+            for(int i=0;i<nums.length;i++){
+                if(nums[i]>0) pos.add(nums[i]);
+                else neg.add(nums[i]);
+            }
+
+            for(int i=0;i<nums.length/2;i++){
+                nums[2*i]=pos.get(i);
+                nums[2*i+1]=neg.get(i);
+            }
+            return nums;
+        }
+
+
 }
 
 
