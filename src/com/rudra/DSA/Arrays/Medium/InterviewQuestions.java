@@ -261,7 +261,54 @@ public int majorityElement(int[] arr) {
  }
 
 
-}
+ //https://leetcode.com/problems/next-permutation/description/
+        public void nextPermutation(int[] arr) {
+            int n = arr.length;
+
+            // Step 1: Find the break point:
+            int ind = -1;
+            for (int i = n - 2; i >= 0; i--) {
+                if (arr[i] < arr[i + 1]) {
+                    ind = i;
+                    break;
+                }
+            }
+
+            // If break point does not exist:
+            if (ind == -1) {
+                // Reverse the whole array:
+                reverse(arr, 0, n - 1);
+                return;
+            }
+
+            // Step 2: Find the next greater element and swap it with arr[ind]:
+            for (int i = n - 1; i > ind; i--) {
+                if (arr[i] > arr[ind]) {
+                    swap(arr, i, ind);
+                    break;
+                }
+            }
+
+            // Step 3: Reverse the right half:
+            reverse(arr, ind + 1, n - 1);
+        }
+
+        private void reverse(int[] arr, int start, int end) {
+            while (start < end) {
+                swap(arr, start, end);
+                start++;
+                end--;
+            }
+        }
+
+        private void swap(int[] arr, int i, int j) {
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+        }
+    }
+
+
 
 
 
