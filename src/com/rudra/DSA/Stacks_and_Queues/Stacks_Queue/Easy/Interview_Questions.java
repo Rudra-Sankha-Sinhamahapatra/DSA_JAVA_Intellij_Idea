@@ -1,5 +1,5 @@
 package com.rudra.DSA.Stacks_and_Queues.Stacks_Queue.Easy;
-
+import java.util.*;
 public class Interview_Questions {
 
     //https://www.geeksforgeeks.org/problems/implement-stack-using-array/1?utm_source=youtube&utm_medium=collab_striver_ytdescription&utm_campaign=implement-stack-using-array
@@ -63,4 +63,40 @@ public class Interview_Questions {
         }
 
     }
+
+    //https://leetcode.com/problems/implement-stack-using-queues/
+    class Q3 {
+
+        Queue <Integer> q=new LinkedList<>();
+        public Q3() {
+
+        }
+
+        public void push(int x) {
+            q.add(x);
+            for(int i=0;i<q.size()-1;i++){
+                q.add(q.remove());
+            }
+        }
+
+        public int pop() {
+            if(q.isEmpty()){
+                return -1;
+            }
+            return q.remove();
+        }
+
+        public int top() {
+            if(q.isEmpty()){
+                return -1;
+            }
+            return q.peek();
+
+        }
+
+        public boolean empty() {
+            return q.isEmpty();
+        }
+    }
+
 }
