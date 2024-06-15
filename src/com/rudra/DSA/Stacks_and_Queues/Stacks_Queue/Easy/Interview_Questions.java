@@ -99,6 +99,7 @@ public class Interview_Questions {
         }
     }
 
+    //https://leetcode.com/problems/implement-queue-using-stacks/description/
 
     class Q5 {
 
@@ -150,6 +151,25 @@ public class Interview_Questions {
  * int param_3 = obj.peek();
  * boolean param_4 = obj.empty();
  */
+
+//https://leetcode.com/problems/valid-parentheses/
+class Q6 {
+    public boolean isValid(String s) {
+        Stack <Character> stack=new Stack<Character>();
+        for(char it:s.toCharArray()){
+            if(it=='('||it=='{'||it=='['){
+                stack.push(it);
+            }
+            else{
+                if(stack.isEmpty()) return false;
+                char ch=stack.pop();
+                if((it==')' && ch=='(') ||(it == ']' && ch == '[') || (it == '}' && ch == '{'))continue;
+                else return false;
+            }
+        }
+        return stack.isEmpty();
+    }
+}
 
 
 
