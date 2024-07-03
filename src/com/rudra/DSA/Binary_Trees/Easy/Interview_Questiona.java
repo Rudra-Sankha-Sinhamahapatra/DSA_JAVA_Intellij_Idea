@@ -71,4 +71,20 @@ public class Interview_Questiona {
         inOrder(node.right,answer);
     }
 
+
+    //https://leetcode.com/problems/binary-tree-postorder-traversal/description/
+    public List<Integer> postorderTraversal(TreeNode root) {
+        List<Integer>answer=new ArrayList<>();
+        postOrder(root,answer);
+        return answer;
+    }
+
+    private void postOrder(TreeNode node,List<Integer>answer){
+        if(node==null){
+            return;
+        }
+        postOrder(node.left,answer);
+        postOrder(node.right,answer);
+        answer.add(node.val);
+    }
 }
