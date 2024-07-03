@@ -55,4 +55,20 @@ public class Interview_Questiona {
         preOrder(node.right,answer);
     }
 
+  //https://leetcode.com/problems/binary-tree-inorder-traversal/description/
+    public List<Integer> inorderTraversal(TreeNode root) {
+        List<Integer>answer=new ArrayList<>();
+        inOrder(root,answer);
+        return answer;
+    }
+
+    private void inOrder(TreeNode node,List<Integer>answer){
+        if(node==null){
+            return;
+        }
+        inOrder(node.left,answer);
+        answer.add(node.val);
+        inOrder(node.right,answer);
+    }
+
 }
