@@ -87,4 +87,31 @@ public class Interview_Questiona {
         postOrder(node.right,answer);
         answer.add(node.val);
     }
+
+
+    //https://leetcode.com/problems/binary-tree-level-order-traversal/description/
+    public List<List<Integer>> levelOrder(TreeNode root) {
+
+        List<List<Integer>> answer = new ArrayList<>();
+        int level = 0;
+        preOrder(root, level, answer);
+        return answer;
+    }
+
+    public void preOrder(TreeNode root, int level, List<List<Integer>> answer) {
+        if (root == null) {
+            return;
+        }
+
+        while (answer.size() <= level) {
+            answer.add(new ArrayList<>());
+        }
+        answer.get(level).add(root.val);
+
+        level++;
+        preOrder(root.left, level, answer);
+        preOrder(root.right, level, answer);
+
+
+    }
 }
