@@ -2,6 +2,7 @@ package com.rudra.DSA.Binary_Trees.Easy;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 public class Interview_Questiona {
 
@@ -53,6 +54,26 @@ public class Interview_Questiona {
         answer.add(node.val);
         preOrder(node.left,answer);
         preOrder(node.right,answer);
+    }
+
+    //iterative
+    public List<Integer> iterativepreorder(TreeNode root) {
+        List<Integer>answer=new ArrayList<>();
+        if(root==null) return answer;
+        Stack<TreeNode> st=new Stack<>();
+        st.push(root);
+
+        while(!st.isEmpty()){
+            root=st.pop();
+            answer.add(root.val);
+            if(root.right!=null){
+                st.push(root.right);
+            }
+            if(root.left!=null){
+                st.push(root.left);
+            }
+        }
+        return answer;
     }
 
   //https://leetcode.com/problems/binary-tree-inorder-traversal/description/
