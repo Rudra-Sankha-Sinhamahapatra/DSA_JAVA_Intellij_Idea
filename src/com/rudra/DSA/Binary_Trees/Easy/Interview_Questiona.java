@@ -57,7 +57,7 @@ public class Interview_Questiona {
     }
 
     //iterative
-    public List<Integer> iterativepreorder(TreeNode root) {
+    public List<Integer> preorderIterative(TreeNode root) {
         List<Integer>answer=new ArrayList<>();
         if(root==null) return answer;
         Stack<TreeNode> st=new Stack<>();
@@ -91,6 +91,25 @@ public class Interview_Questiona {
         answer.add(node.val);
         inOrder(node.right,answer);
     }
+
+
+    //iterative
+    public List<Integer> inorderIterative(TreeNode root) {
+        List<Integer>ans=new ArrayList<>();
+        Stack<TreeNode>st=new Stack<>();
+        TreeNode curr=root;
+        while(curr!=null||!st.isEmpty()){
+            while(curr!=null){
+                st.push(curr);
+                curr=curr.left;
+            }
+            curr=st.pop();
+            ans.add(curr.val);
+            curr=curr.right;
+        }
+        return ans;
+    }
+
 
 
     //https://leetcode.com/problems/binary-tree-postorder-traversal/description/
