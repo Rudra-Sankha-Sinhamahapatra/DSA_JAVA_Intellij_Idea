@@ -129,6 +129,36 @@ public class Interview_Questiona {
     }
 
 
+    //iterative
+
+    public List<Integer> postorderIterative_TwoStacks(TreeNode root) {
+        List<Integer> answer = new ArrayList<>();
+        if (root == null) return answer;
+
+        Stack<TreeNode> st1 = new Stack<>();
+        Stack<TreeNode> st2 = new Stack<>();
+        st1.push(root);
+
+        while (!st1.isEmpty()) {
+            TreeNode node = st1.pop();
+            st2.push(node);
+
+            if (node.left != null) {
+                st1.push(node.left);
+            }
+            if (node.right != null) {
+                st1.push(node.right);
+            }
+        }
+
+        while (!st2.isEmpty()) {
+            answer.add(st2.pop().val);
+        }
+
+        return answer;
+    }
+
+
     //https://leetcode.com/problems/binary-tree-level-order-traversal/description/
     public List<List<Integer>> levelOrder(TreeNode root) {
 
