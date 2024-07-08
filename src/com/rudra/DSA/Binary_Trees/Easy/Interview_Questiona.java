@@ -1,8 +1,6 @@
 package com.rudra.DSA.Binary_Trees.Easy;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 public class Interview_Questiona {
 
@@ -158,6 +156,29 @@ public class Interview_Questiona {
         return answer;
     }
 
+//iterative - single stack
+public List<Integer> postorderIterative_SingleStacks(TreeNode root) {
+    List<Integer> result = new ArrayList<>();
+    Deque<TreeNode> stack = new ArrayDeque<>();
+    TreeNode current = root;
+    TreeNode lastVisited = null;
+
+    while (current != null || !stack.isEmpty()) {
+        if (current != null) {
+            stack.push(current);
+            current = current.left;
+        } else {
+            TreeNode peekNode = stack.peek();
+            if (peekNode.right != null && lastVisited != peekNode.right) {
+                current = peekNode.right;
+            } else {
+                result.add(peekNode.val);
+                lastVisited = stack.pop();
+            }
+        }
+    }
+    return result;
+}
 
     //https://leetcode.com/problems/binary-tree-level-order-traversal/description/
     public List<List<Integer>> levelOrder(TreeNode root) {
