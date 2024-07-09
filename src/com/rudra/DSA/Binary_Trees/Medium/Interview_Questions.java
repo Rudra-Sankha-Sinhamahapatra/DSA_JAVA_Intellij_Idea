@@ -50,4 +50,23 @@ public class Interview_Questions {
         }
         return depth;
     }
+
+    //https://leetcode.com/problems/balanced-binary-tree/description/
+    //Brute
+
+    public boolean isBalanced(TreeNode root) {
+        if(root==null) return true;
+        int leftH=getH(root.left);
+        int rightH=getH(root.right);
+        if(Math.abs(leftH-rightH)<=1 && isBalanced(root.left) && isBalanced(root.right)){
+            return true;
+        }
+        return false;
+    }
+    public int getH(TreeNode root){
+        if(root==null) return 0;
+        int lh=getH(root.left);
+        int rh=getH(root.right);
+        return 1+Math.max(lh,rh);
+    }
 }
