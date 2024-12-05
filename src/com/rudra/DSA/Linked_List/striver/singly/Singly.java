@@ -10,7 +10,7 @@ class Node {
     }
 }
 
-public class  inserting{
+public class Singly{
 
     public Node insertHead(Node head, int val) {
         Node temp = new Node(val);
@@ -68,7 +68,7 @@ public class  inserting{
     }
 
     public static void main(String[] args) {
-        inserting sol = new inserting();
+        Singly sol = new Singly();
 
         Node head = null;
 
