@@ -131,6 +131,28 @@ public class Singly{
      return head;
     }
 
+    Node deleteValue (Node head,int value) {
+        if(head == null) {
+            return null;
+        }
+        else if (head.next == null) {
+            return null;
+        }
+        else if(head.data == value) {
+            return deleteFirst(head);
+        }
+        Node temp = head;
+
+        while(temp.next.data != value) {
+            temp = temp.next;
+        }
+        if(temp.next!=null && temp.next.data == value) {
+            temp.next = temp.next.next;
+        }
+
+   return head;
+    }
+
     // Display linked list for testing
     public void printList(Node head) {
         Node current = head;
@@ -160,5 +182,10 @@ public class Singly{
         sol.printList(head);// Output: 2 -> 1 -> 67 -> null
         head = sol.deleteIndex(head,0);
         sol.printList(head);//Output: 1 -> 67 -> null
+        head = sol.insertHead(head,4);
+        head = sol.insertHead(head,4);
+        sol.printList(head);
+        head = sol.deleteValue(head,67);
+        sol.printList(head);
     }
 }
