@@ -153,6 +153,41 @@ public class Singly{
    return head;
     }
 
+    int getLength(Node head){
+        if(head == null) {
+            return 0;
+        }
+    Node temp = head;
+    int length = 1;
+    while(temp.next!=null){
+        length++;
+        temp = temp.next;
+    }
+    return length;
+    }
+
+    public int search (Node head,int value) {
+        if(head == null) {
+            System.out.println("Linked List is Empty");
+            return 0;
+        }
+        Node temp = head;
+        int index = 0;
+        boolean found = false;
+        while(temp!=null){
+            if(temp.data == value) {
+                found = true;
+                System.out.println(value+" found at index "+index);
+            }
+            index ++;
+            temp = temp.next;
+        }
+        if(!found) {
+            System.out.println("Element " + value + " Not found");
+        }
+        return 0;
+    }
+
     // Display linked list for testing
     public void printList(Node head) {
         Node current = head;
@@ -184,8 +219,11 @@ public class Singly{
         sol.printList(head);//Output: 1 -> 67 -> null
         head = sol.insertHead(head,4);
         head = sol.insertHead(head,4);
-        sol.printList(head);
+        sol.printList(head);//4 -> 4 -> 1 -> 67 -> null
         head = sol.deleteValue(head,67);
-        sol.printList(head);
+        sol.printList(head);//4 -> 4 -> 1 -> null
+        sol.search(head,4);
+        int length = sol.getLength(head);
+        System.out.println("Length of the Linked List: "+length);
     }
 }
