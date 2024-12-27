@@ -402,4 +402,48 @@ public int longestConsecutive2(int[] a) {
             }
             return false;
         }
+
+     //https://www.geeksforgeeks.org/problems/leaders-in-an-array-1587115620/1?utm_source=youtube&utm_medium=collab_striver_ytdescription&utm_campaign=leaders-in-an-array
+
+    //Brute
+     static ArrayList<Integer> leadersBrute(int arr[]) {
+         // code here
+         ArrayList<Integer> ans= new ArrayList<>();
+         int n = arr.length;
+
+         for (int i = 0;i<n;i++){
+             boolean leader = true;
+
+             for(int j = i+1;j<n;j++){
+                 if(arr[j]>arr[i]){
+                     leader = false;
+                     break;
+                 }
+             }
+             if(leader) {
+                 ans.add(arr[i]);
+             }
+
+         }
+         return ans;
+     }
+
+     //Optimal
+
+    static ArrayList<Integer> leadersOptimal(int arr[]) {
+        // code here
+        ArrayList<Integer> ans= new ArrayList<>();
+        int n = arr.length;
+        int max = arr[n-1];
+        ans.add(arr[n-1]);
+
+        for (int i = n-2;i>=0;i--){
+            if(arr[i]>=max){
+                ans.add(arr[i]);
+                max = arr[i];
+            }
+        }
+        Collections.reverse(ans);
+        return ans;
+    }
 }
