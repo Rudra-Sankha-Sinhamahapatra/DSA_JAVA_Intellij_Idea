@@ -170,4 +170,65 @@ public class Interview_Questions {
         return result;
     }
 
+//https://leetcode.com/problems/boundary-of-binary-tree/description/
+class Node {
+    int data;
+    Node left;
+    Node right;
+
+    // Constructor to initialize
+    // the node with a value
+    Node(int val) {
+        data = val;
+        left = null;
+        right = null;
+    }
+}
+    boolean isLeaf(Node root){
+       return root.left == null && root.right==null;
+    }
+
+    void addLeftBoundary(Node root,ArrayList<Integer> res) {
+        Node curr = root.left;
+        while(curr!=null){
+            if(!isLeaf(curr)) res.add(curr.data);
+            if(curr.left!=null) curr = curr.left;
+            else curr = curr.right;
+        }
+
+    }
+
+    void addRightBoundary(Node root,ArrayList<Integer> res) {
+        Node curr = root.right;
+        ArrayList<Integer> temp = new ArrayList<Integer>();
+        while(curr != null) {
+            if(!isLeaf(curr)) temp.add(curr.data);
+            if(curr.right !=null) curr = curr.right;
+            else curr = curr.left;
+        }
+        int i;
+        for(i = temp.size() -1;i>=0;i--){
+            res.add(temp.get(i));
+        }
+    }
+
+    void addLeaves (Node root,ArrayList<Integer>res) {
+        if(isLeaf(root)){
+            res.add(root.data);
+            return;
+        }
+
+        if(root.left != null) addLeaves(root.left,res);
+        if(root.right != null) addLeaves(root.right,res);
+    }
+
+    ArrayList <Integer> printBoundary (Node node) {
+        ArrayList<Integer>ans = new ArrayList<Integer>();
+        if(!isLeaf(node)) ans.add(node.data);
+        addLeftBoundary(node,ans);
+        addLeaves(node,ans);
+        addRightBoundary(node,ans);
+        return ans;
+    }
+
 }
